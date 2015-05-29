@@ -1,10 +1,3 @@
-# lua-scope
-Resource Acquisition Is Initialization implementation for Lua
-
-```
-```
-
-
 lua-scope
 =========
 
