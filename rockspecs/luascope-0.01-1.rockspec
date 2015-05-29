@@ -13,7 +13,7 @@ description = {
    license = "Artistic-2.0"
 }
 dependencies = {
-   "lua => 5.1",
+   "lua >= 5.1",
 }
 build = {
    type = "builtin",
