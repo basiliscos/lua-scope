@@ -2,7 +2,7 @@ package = "luascope"
 version = "0.01-1"
 source = {
    url = "git://github.com/basiliscos/lua-scope",
-   tag = "v0.01",
+   tag = "v0.01-1",
 }
 description = {
    summary = "Simple Resource Acquisition Is Initialization implementation for Lua",
