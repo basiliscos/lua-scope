@@ -3,7 +3,7 @@ lua-scope
 
 *lua-scope* is simple Resource Acquisition Is Initialization implementation for Lua.
 
-[![Build Status](https://travis-ci.org/basiliscos/lua-scope.png)](https://travis-ci.org/basiliscos/lua-scope.png)
+[![Build Status](https://travis-ci.org/basiliscos/lua-scope.png)](https://travis-ci.org/basiliscos/lua-scope)
 
 ```lua
 local scope = require "scope"
