@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>lua-scope: Resource Acquisition Is Initialization implementation for Lua</title>
+        <link rel="stylesheet" href="doc.css" type="text/css"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <div id="product">
+                <div id="product_logo">
+                    <a href="http://www.keplerproject.org">
+                        <img alt="lua-xpath" src="lua.gif"/>
+                    </a>
+                </div>
+                <div id="product_name"><big><strong>lua-scope</strong></big></div>
+                <div id="product_description">Simple implementation for Resource Acquisition Is Initialization</div>
+            </div> <!-- id="product" -->
+            <div id="main">
+                <div id="navigation">
+                    <h1>lua-xpath</h1>
+	                <ul>
+	                    <li><strong>Home</strong>
+	                        <ul> 
+		                        <li><a href="index.html#overview">Overview</a></li>
+		                        <li><a href="index.html#status">Status</a></li>
+		                        <li><a href="index.html#download">Download</a></li>
+		                        <li><a href="index.html#history">History</a></li>
+		                        <li><a href="index.html#credits">Credits</a></li>
+		                        <li><a href="index.html#contact">Contact us</a></li>
+	                        </ul>
+	                    </li>
+	                    <li><a href="manual.html">Manual</a>
+	                        <ul>
+		                        <li><a href="manual.html#introduction">Introduction</a></li>
+		                        <li><a href="manual.html#usage">Usage</a></li>
+	                        </ul>
+	                    </li>
+                        <li><a href="https://github.com/basiliscos/lua-scope">Project</a>
+                            <ul>
+                                <li><a href="https://github.com/basiliscos/lua-scope/issues">Bug Tracker</a></li>
+                                <li><a href="https://github.com/basiliscos/lua-scope">Git</a></li>
+                            </ul>
+                        </li>
+	                    <li><a href="license.html">License</a></li>
+	                </ul>
+                </div> <!-- id="navigation" -->
+
+                <div id="content">        
+
+                    <h2><a name="intro"></a>Introduction</h2>
+
+                    <p>
+                        There is need to carefully release resources after acquisition right after
+                        comletion work with them. The <tt>__gc</tt> cannot guarantee that, because,
+                        generally, garbage collector isnt deterministic. The propose 
+                    </p>
+
+                    <p>
+                        The propose lua-scope module is an solution of that issue. 
+                    </p>
+
+                    <p>
+                        The implementation is based on the ideas at <a href="http://lua-users.org/wiki/ResourceAcquisitionIsInitialization">lua-users.org</a>. 
+                    </p>
+
+
+                    <h2><a name="usage"></a>Usage</h2> 
+                    
+                    <pre class="example">
+  require "luaxpath"
+
+  scope(function(guard)
+    local f = assert(io.open("out", "w"))
+    guard:on_exit(function() f:close() end) -- always executed at the end of the function
+    domorestuff()                           -- might die or might not
+   end)
+                    </pre>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
